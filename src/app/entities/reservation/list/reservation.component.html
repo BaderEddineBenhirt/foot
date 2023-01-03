@@ -1,0 +1,51 @@
+<div class=wrapper>
+    <section class="innerpage_all_wrap bg-white">
+        <div class=container>
+            <div class=row>
+
+
+
+                <div class=innerWrapper>
+
+                    <aside class=contentinner>
+                        <div class=" ff bg-red headline01 clearfix">List des reservations <a [routerLink]="['new']" class="btn-small01 btn-green">add</a>
+                            <a [routerLink]="['join']" class="btn-small01 btn-green">
+                                Join
+                            </a>
+                        </div>
+                        <ul class=ticketInfo>
+                            <li *ngFor="let club of reserves">
+                                <ul class="t_info headline01 clearfix">
+                                    <li>{{club.reservedBy.name}} {{club.reservedBy.prenom}}</li>
+                                    <li>
+
+                                        <div class=" ticketInner_info paragraph02 headline01 clearfix">
+                                            <p style="color: white;">
+                                                <b>Time : </b> {{club.creneau.heureDebut}} to {{club.creneau.heureDebut}} <br>
+                                                <b>Terrain description :</b> {{club.terrain.description}} <br>
+                                                <b>Date de match :</b> {{club.date}} <br>
+                                                <b>Reservation Complete :</b> {{club.etat}} <br>
+                                                <b>Nombre de joueurs Max : </b> {{club.terrain.nbrJoueurs}} <br>
+                                                <b>Nombre de joueur dans cette reservation : </b> {{club.nbrjoueur}}
+                                            </p>
+                                        </div>
+
+                                    </li>
+                                    <li><a (click)="delete(club.id)" class="btn-small01 btn-red">delete</a> <br>
+
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+
+
+                        </ul>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
